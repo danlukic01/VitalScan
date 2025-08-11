@@ -1,0 +1,54 @@
+﻿@model VitalScan.Web.Controllers.HomeController.BookingDetailVm
+@{
+    ViewData["Title"] = "Thank you";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="mb-3">Booking confirmed 🎉</h3>
+
+                <div class="alert alert-success mb-4">
+                    <div><strong>Reference:</strong> @Model.Id</div>
+                    <div><strong>Status:</strong> @Model.Status</div>
+                </div>
+
+                <h5 class="mb-2">Appointment details</h5>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Service</span><strong>@Model.ServiceName</strong>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Date</span><strong>@Model.StartLocal.ToString("dddd, dd MMM yyyy")</strong>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Time</span><strong>@Model.StartLocal.ToString("h:mm tt") – @Model.EndLocal.ToString("h:mm tt") (@Model.DurationMinutes min)</strong>
+
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Practitioner</span><strong>@Model.PractitionerName</strong>
+                    </li>
+                </ul>
+
+                <h5 class="mb-2">Contact</h5>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Name</span><strong>@Model.CustomerName</strong>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Email</span><strong>@Model.CustomerEmail</strong>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Phone</span><strong>@Model.CustomerPhone</strong>
+                    </li>
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <a class="btn btn-success" href="/">Back to home</a>
+                    <a class="btn btn-outline-secondary" href="/Home/BookNow">Make another booking</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

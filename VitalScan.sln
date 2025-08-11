@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalScan.Api", "VitalScan.Api\VitalScan.Api.csproj", "{C271A66F-B3B1-412A-A1EA-89A0509AFDCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalScan.Web", "VitalScan.Web\VitalScan.Web.csproj", "{D4726632-DDE4-479C-BE39-70BA55D8D2EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalScan.Mobile", "VitalScan.Mobile\VitalScan.Mobile.csproj", "{A9D56BE7-CE3E-4FAC-84BD-37EC9811FF65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalScan.Domain", "VitalScan.Domain\VitalScan.Domain.csproj", "{77A3ED1A-1157-4955-A7EC-4843AD1C4448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalScan.Application", "VitalScan.Application\VitalScan.Application.csproj", "{4BB54774-CFE6-450F-9AFD-9B6C4916A155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitalScan.Infrastructure", "VitalScan.Infrastructure\VitalScan.Infrastructure.csproj", "{C4F17680-A539-4856-9FBA-2F2D7AF2ED74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C271A66F-B3B1-412A-A1EA-89A0509AFDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C271A66F-B3B1-412A-A1EA-89A0509AFDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C271A66F-B3B1-412A-A1EA-89A0509AFDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C271A66F-B3B1-412A-A1EA-89A0509AFDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4726632-DDE4-479C-BE39-70BA55D8D2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4726632-DDE4-479C-BE39-70BA55D8D2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4726632-DDE4-479C-BE39-70BA55D8D2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4726632-DDE4-479C-BE39-70BA55D8D2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D56BE7-CE3E-4FAC-84BD-37EC9811FF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D56BE7-CE3E-4FAC-84BD-37EC9811FF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D56BE7-CE3E-4FAC-84BD-37EC9811FF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D56BE7-CE3E-4FAC-84BD-37EC9811FF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A3ED1A-1157-4955-A7EC-4843AD1C4448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A3ED1A-1157-4955-A7EC-4843AD1C4448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A3ED1A-1157-4955-A7EC-4843AD1C4448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A3ED1A-1157-4955-A7EC-4843AD1C4448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB54774-CFE6-450F-9AFD-9B6C4916A155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB54774-CFE6-450F-9AFD-9B6C4916A155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB54774-CFE6-450F-9AFD-9B6C4916A155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB54774-CFE6-450F-9AFD-9B6C4916A155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F17680-A539-4856-9FBA-2F2D7AF2ED74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F17680-A539-4856-9FBA-2F2D7AF2ED74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F17680-A539-4856-9FBA-2F2D7AF2ED74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F17680-A539-4856-9FBA-2F2D7AF2ED74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VitalScan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* Keep content nicely centered on large screens */
+        .container {
+            max-width: 1080px;
+        }
+        /* Subtle sticky header */
+        .site-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+            background: #ffffffcc;
+            backdrop-filter: saturate(180%) blur(6px);
+            box-shadow: 0 1px 12px rgba(0,0,0,.06);
+        }
+
+        .brand-logo {
+            height: 28px;
+            width: auto;
+            margin-right: .5rem;
+            vertical-align: middle;
+        }
+
+        .hero {
+            background: linear-gradient(135deg,#e3ffe7 0%,#d9e7ff 100%);
+            padding: 2.5rem;
+            margin: 1.25rem 0 2rem;
+            border-radius: 1rem;
+        }
+
+        .card {
+            border-radius: 1rem;
+        }
+
+        .brand-full {
+            height: 88px; /* good for a full wordmark in a navbar */
+            width: auto;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Single, tidy nav with logo + brand -->
+    <nav class="navbar site-navbar">
+        <div class="container d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center m-0 p-0" href="/">
+                <img class="brand-full" src="@Url.Content("~/images/vitalscan-logo.jpg")" alt="VitalScan" />
+            </a>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Home/Services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Home/About">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Home/Contact">Contact</a></li>
+            </ul>
+
+            <!-- right-side actions could go here later -->
+        </div>
+    </nav>
+   
+    <main class="container my-4">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top py-3">
+        <div class="container text-center text-muted">
+            © @DateTime.Now.Year VitalScan — Bioresonance wellness ·
+            <a class="text-muted" href="/Home/Privacy">Privacy</a> ·
+            <a class="text-muted" href="/Home/Terms">Terms</a> ·
+            <a class="text-muted" href="/Home/Cancellation">Cancellation</a>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

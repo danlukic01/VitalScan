@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "VitalScan.Api\\VitalScan.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "VitalScan.Web\\VitalScan.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

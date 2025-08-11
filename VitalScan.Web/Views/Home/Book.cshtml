@@ -1,0 +1,101 @@
+﻿@model VitalScan.Web.Controllers.HomeController.BookVm
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="mb-3">Book: @Model.ServiceName</h3>
+
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger">
+                        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <div>@err.ErrorMessage</div>
+                        }
+                    </div>
+                }
+
+                <!-- Filters: Date + Duration -->
+                <form method="get" class="mb-3">
+                    <input type="hidden" name="id" value="@Model.ServiceId" />
+                    <input type="hidden" name="name" value="@Model.ServiceName" />
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Date</label>
+                            <input class="form-control" type="date" name="date" value="@Model.DateStr" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Duration</label>
+                            <select class="form-select" name="durationMinutes">
+                                <option value="30" selected="@(Model.DurationMinutes == 30)">30 minutes</option>
+                                <option value="45" selected="@(Model.DurationMinutes == 45)">45 minutes</option>
+                                <option value="60" selected="@(Model.DurationMinutes == 60)">60 minutes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-outline-primary" type="submit">Refresh slots</button>
+                    </div>
+                </form>
+
+                <!-- Slots -->
+                <h5 class="mb-2">Available times</h5>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    @if (Model.Slots.Any())
+                    {
+                        foreach (var s in Model.Slots)
+                        {
+                            var iso = s.startLocal.ToString("yyyy-MM-ddTHH:mm");
+                            <button type="button" class="btn btn-sm btn-outline-success"
+                                    onclick="document.getElementById('StartLocal').value='@iso'">
+                                @s.startLocal.ToString("h:mm tt")
+                                <span class="text-muted small">(@Model.DurationMinutes min)</span>
+                            </button>
+                        }
+                    }
+                    else
+                    {
+                        <span class="text-muted">No free slots for this day and duration.</span>
+                    }
+                </div>
+
+                <!-- Booking form -->
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="ServiceId" />
+                    <input type="hidden" asp-for="ServiceName" />
+                    <input type="hidden" asp-for="DurationMinutes" />
+
+                    <div class="mb-3">
+                        <label class="form-label">Chosen time</label>
+                        <input class="form-control" id="StartLocal" type="datetime-local" asp-for="StartLocal" required />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Name</label>
+                            <input class="form-control" asp-for="CustomerName" required />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email</label>
+                            <input class="form-control" type="email" asp-for="CustomerEmail" required />
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input class="form-control" asp-for="CustomerPhone" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Notes</label>
+                        <textarea class="form-control" asp-for="Notes" rows="3"></textarea>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Confirm booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
